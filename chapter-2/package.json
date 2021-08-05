@@ -1,0 +1,24 @@
+{
+  "name": "exercise-2.1",
+  "version": "1.0.0",
+  "description": "getting started",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "author": "James-Deciutiis",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.4.12",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "^7.32.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "ts-node": "^10.1.0",
+    "typescript-node-starter": "^1.0.5"
+  }
+}
