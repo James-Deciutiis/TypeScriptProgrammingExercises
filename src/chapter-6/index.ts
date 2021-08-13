@@ -42,3 +42,17 @@ type b = Exclusive<1 | 2, 2 | 4>
   5. Simplify. 1 | never | never | 4
   6. Simplify. 1 | 4
 */
+
+let globalCache = {
+    get(user:string): string {
+        return "userid"
+    }
+}
+
+let userId = fetchUser()
+
+userId.toUpperCase()
+
+function fetchUser(){
+    return  globalCache.get('userId')
+}
