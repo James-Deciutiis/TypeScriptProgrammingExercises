@@ -1,5 +1,7 @@
 // 1. Design a way to handle erros for the following API.
 // A:
+class noLoggedInUserException extends Error {}
+
 type UserID = {
     userID: string
     friendList: UserID[]
@@ -29,7 +31,7 @@ class API {
             return this.loggedInUser
         }
 
-        throw Error("User never logged in")
+        throw new noLoggedInUserException("User never logged in")
     }
 
     getFriendIDs(userID: UserID): UserID[]{
@@ -37,7 +39,7 @@ class API {
             return userID.friendList
         }
 
-        throw Error("User never logged in")
+        throw new noLoggedInUserException("User never logged in")
     }
 
     getUserName(userID: UserID): string{
@@ -45,12 +47,12 @@ class API {
             return userID.userName
         }
 
-        throw Error("User never logged in")
+        throw new noLoggedInUserException("User never logged in")
     }
 }
 
 let api = new API(new User('d1bi12dqx' , [], 'person'))
-//api.loggedInUser = null --> uncomment to see error being thrown
+//api.loggedInUser = null //--> uncomment to see error being thrown
 
 try{
     let user = api.getLoggedInUserID()
